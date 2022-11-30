@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    perspective: 500px;
+    background: #000000;
+}
+
+.cubo {
+    width: 200px;
+    height: 200px;
+
+    animation: rotate 8s infinite alternate;
+    transform-style: preserve-3d;
+}
+
+.cuboOff {
+    width: 200px;
+    height: 200px;
+
+    animation: rotateOff 1s infinite alternate;
+    transform-style: preserve-3d;
+}
+
+.quadrado {
+    background: linear-gradient(45deg, rgb(136, 0, 129) 15%, rgb(0, 47, 122) 50%, rgb(173, 0, 0) 85%);
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+
+    border: 2px solid #154d97;
+}
+
+.face--frente {
+    transform: translateZ(100px);
+}
+
+.face--direira {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.face--costa {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.face--esquerda {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.face--cima {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.face--baixo {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(-40deg) rotateY(-50deg);
+    }
+
+    50% {
+      transform: rotateX(40deg) rotateY(380deg);
+    }
+
+    to {
+      transform: rotateX(-40deg) rotateY(-50deg);
+    }
+}
+
+@keyframes rotateOff {
+    from {
+        transform: rotateX(-40deg) rotateY(-50deg);
+    }
+
+    50% {
+      transform: rotateX(-40deg) rotateY(-50deg);
+    }
+
+    to {
+      transform: rotateX(-40deg) rotateY(-50deg);
+    }
+}
